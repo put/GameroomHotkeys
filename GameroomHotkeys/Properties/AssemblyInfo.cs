@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("GameroomHotkeys")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Gameroom Hotkeys")]
+[assembly: AssemblyDescription("Simpel programma waarmee je sneller antwoord kunt geven in de Gameroom Telegram groep.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("GameroomHotkeys")]
+[assembly: AssemblyCompany("https://github.com/put")]
+[assembly: AssemblyProduct("Gameroom Hotkeys")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
