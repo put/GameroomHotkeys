@@ -106,18 +106,18 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(235, 73);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 13);
+            this.label5.Size = new System.Drawing.Size(116, 13);
             this.label5.TabIndex = 10;
-            this.label5.Text = "Antwoord B";
+            this.label5.Text = "Antwoord B (GEGOKT)";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(235, 51);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(62, 13);
+            this.label6.Size = new System.Drawing.Size(116, 13);
             this.label6.TabIndex = 9;
-            this.label6.Text = "Antwoord A";
+            this.label6.Text = "Antwoord A (GEGOKT)";
             // 
             // label7
             // 
