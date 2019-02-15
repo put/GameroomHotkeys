@@ -50,11 +50,13 @@ namespace GameroomHotkeys
 
         public Process Telegram { get; set; }
         public bool HotkeysSet { get; set; }
+        public Stopwatch Throttler { get; set; }
 
         public MainFrm()
         {
             InitializeComponent();
             HotkeysSet = false;
+            Throttler = new Stopwatch();
             FindTelegram();
         }
 
@@ -90,7 +92,7 @@ namespace GameroomHotkeys
         public void GiveAnswer(string message)
         {
             BringToFront(Telegram);
-            SendKeys.Send(message + ENTER_KEY);
+            SendKeys.SendWait(message + ENTER_KEY);
         }
 
         protected override void WndProc(ref Message m)
@@ -104,12 +106,25 @@ namespace GameroomHotkeys
                 KeyModifier modifier = (KeyModifier)((int)m.LParam & 0xFFFF);
                 int id = m.WParam.ToInt32();
 
-                switch (id)
+                if (!Throttler.IsRunning || Throttler.ElapsedMilliseconds > 3000)
                 {
-                    case 1: GiveAnswer(ANSWER_A); break;
-                    case 2: GiveAnswer(ANSWER_B); break;
-                    case 3: GiveAnswer(GUESS_A); break;
-                    case 4: GiveAnswer(GUESS_B); break;
+                    switch (id)
+                    {
+                        case 1:
+                            GiveAnswer(ANSWER_A);
+                            break;
+                        case 2:
+                            GiveAnswer(ANSWER_B);
+                            break;
+                        case 3:
+                            GiveAnswer(GUESS_A);
+                            break;
+                        case 4:
+                            GiveAnswer(GUESS_B);
+                            break;
+                    }
+
+                    Throttler.Restart();
                 }
             }
         }
